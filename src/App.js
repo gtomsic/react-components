@@ -1,6 +1,7 @@
 import React from "react";
 import faker from "@faker-js/faker";
 import CommentItem from "./components/CommentItem";
+import ApprovalCard from "./components/ApprovalCard";
 
 const comments = [
   { name: "Sam", time: "Today at 6:00PM", body: "Nice blog post!" },
@@ -18,13 +19,14 @@ const comments = [
 
 const App = () => {
   const renderedComments = comments.map((comment) => (
-    <CommentItem
-      key={comment.name}
-      name={comment.name}
-      time={comment.time}
-      body="Nice blog post!"
-      image={faker.image.avatar()}
-    />
+    <ApprovalCard key={comment.name}>
+      <CommentItem
+        name={comment.name}
+        time={comment.time}
+        body="Nice blog post!"
+        image={faker.image.avatar()}
+      />
+    </ApprovalCard>
   ));
   return (
     <div>
